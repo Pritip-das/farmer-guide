@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { LineChart, Line, XAxis, YAxis, Tooltip, ResponsiveContainer } from 'recharts';
 import jsPDF from 'jspdf';
+import ChatWidget from './components/ChatWidget';
 
 const API_BASE = 'http://localhost:5000/api';
 
@@ -121,7 +122,9 @@ export default function App() {
           </div>
         </div>
       </div>
+      <ChatWidget />
     </div>
+    
   );
 }
 
