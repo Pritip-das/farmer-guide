@@ -1,0 +1,43 @@
+# Farmer Weather Advisor
+
+A MERN stack application providing real-time weather insights and crop advisories for farmers.
+
+## Features
+- **Weather Data:** Temperature, Humidity, Rain Probability, Wind Speed.
+- **Smart Advisories:** Rule-based logic (e.g., "Avoid spraying if wind > 15km/h").
+- **Visual Trends:** Interactive charts for temperature and rain trends.
+- **Search History:** Tracks last 5 searched locations via MongoDB.
+- **PDF Export:** Download advisory reports.
+
+## Setup Instructions
+
+### Prerequisites
+- Node.js & npm
+- MongoDB (running locally or cloud URI)
+- OpenWeatherMap API Key
+
+### Backend Setup
+1. `cd backend`
+2. `npm install`
+3. Create `.env` file based on `.env.example`. Add your API Key and Mongo URI.
+4. `npm run dev` (Runs on port 5000)
+
+### Frontend Setup
+1. `cd frontend`
+2. `npm install`
+3. `npm start` (Runs on port 3000)
+
+## API Reference
+
+### GET `/api/weather?location=Name`
+Fetches weather and returns:
+```json
+{
+  "location": "London",
+  "temperature": 18,
+  "humidity": 60,
+  "windSpeed": "12.5",
+  "rainProb": "20",
+  "advisories": ["Good conditions for pesticide spraying."],
+  "forecast": [...]
+}
